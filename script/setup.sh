@@ -7,7 +7,7 @@ git submodule update --init
 ## dotfilesのリンクを張る
 
 # 主なdotfilesのリンク
-DOT_FILES=("atom" "emacs.d" "tmux" "vim" "gitignore_global" "tmux.conf" "vimrc" "zshenv" "latexmkrc")
+DOT_FILES=("atom" "emacs.d" "tmux" "gitignore_global" "tmux.conf" "vimrc" "nvimrc" "zshenv" "latexmkrc")
 
 if [ ! -d $HOME/.dotfiles/refuge ]; then
 	mkdir $HOME/.dotfiles/refuge
@@ -45,6 +45,6 @@ done
 
 
 # Atomのパッケージをインストール
-if type apm >/dev/null 2>&1; then
-	apm stars --install
-fi
+# if type apm >/dev/null 2>&1; then
+# 	apm stars --install
+# fi
