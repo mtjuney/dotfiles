@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ## submoduleの読み込み
 git submodule update --init
@@ -7,7 +7,7 @@ git submodule update --init
 ## dotfilesのリンクを張る
 
 # 主なdotfilesのリンク
-DOT_FILES=("atom" "emacs.d" "tmux" "gitignore_global" "tmux.conf" "vimrc" "nvimrc" "zshenv" "latexmkrc")
+DOT_FILES=("atom" "emacs.d" "tmux" "gitignore_global" "tmux.conf" "vimrc" "zshenv" "latexmkrc")
 
 if [ ! -d $HOME/.dotfiles/refuge ]; then
 	mkdir $HOME/.dotfiles/refuge
@@ -43,8 +43,5 @@ do
 	link_dotfiles $file
 done
 
-
-# Atomのパッケージをインストール
-# if type apm >/dev/null 2>&1; then
-# 	apm stars --install
-# fi
+mkdir -p $HOME/.config/nvim
+ln -s $HOME/.dotfiles/_.nvimrc $HOME/.config/nvim/init.vim

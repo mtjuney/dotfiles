@@ -49,14 +49,17 @@ alias gipdevelop="git push origin develop"
 function gitbeer() {
 	git add .;
 	git commit -m '🍺';
-	git push origin master;
 }
 
 function gitfix() {
 	git add .;
 	git commit -m 'bugfix';
-	git push origin master;
 }
+
+# Vim
+if which nvim &> /dev/null; then
+	alias vim='nvim'
+fi
 
 # others
 alias jn="jupyter notebook"
