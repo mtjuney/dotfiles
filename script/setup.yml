@@ -1,0 +1,47 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  become: no
+
+  vars:
+    dotfiles:
+      - atom
+      - emacs.d
+      - tmux
+      - vim
+      - gitignore_global
+      - tmux.conf
+      - vimrc
+      - zshenv
+      - latexmkrc
+
+    atom_packages_packages:
+      - atom-beautify
+      - autocomplete-paths
+      - autocomplete-plus
+      - autocomplete-python
+      - autocomplete-snippets
+      - chary-tree-view
+      - color-picker
+      - file-icons
+      - highlight-selected
+      - language-lisp
+      - language-python
+      - linter
+      - linter-ruby
+      - maege-conflicts
+      - minimap
+      - minimap-highlight-selected
+      - minimap-pigments
+      - pigments
+      - vim-mode
+
+  pre_tasks:
+    - name: サブモジュール読み込み
+      shell: git submodule update --init
+
+    - name: シンボリックリンクを張る
+      file: path="~/.{{ item }}" src="~/.dotfiles/_.{{ item }}" state=link
+      with_items: dotfiles
+  roles:
+    - hnakamur.atom-packages

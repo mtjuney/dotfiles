@@ -1,0 +1,47 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "9c212dba-7ab2-4bd9-bf92-130299b7ebb0"
+  "autocomplete-plus":
+    confirmCompletion: "tab"
+    enableAutoConfirmSingleSuggestion: false
+    maxVisibleSuggestions: 5
+  "autocomplete-python":
+    caseInsensitiveCompletion: false
+  core:
+    disabledPackages: [
+      "autocomplete-haskell"
+      "vim-mode"
+      "symbols-view"
+      "linter-python"
+    ]
+    packagesWithKeymapsDisabled: []
+    telemetryConsent: "no"
+  editor:
+    fontFamily: "Ricty Diminished Discord"
+    fontSize: 12
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "c0809060-8a0c-cacd-d92a-2775a2e270a2"
+  kite:
+    showKiteTourOnStatup: false
+  linter: {}
+  "linter-ui-default":
+    showPanel: true
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      pigments: true
+      pigmentsDecorationsZIndex: 0
+  "symbols-tree-view":
+    autoToggle: true
+  tabs: {}
+  term2: {}
+  term3: {}
+  "vim-mode":
+    startInInsertMode: true
+  welcome:
+    showOnStartup: false
