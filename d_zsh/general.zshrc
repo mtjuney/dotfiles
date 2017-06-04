@@ -32,7 +32,7 @@ setopt chase_links
 setopt mark_dirs
 setopt no_flow_control
 
-fpath=($HOME/.dotfiles/d_zsh/zsh_completions/src $fpath)
+fpath=($HOME/.dotfiles/d_zsh/submodules/zsh_completions/src $fpath)
 
 
 export TERM="xterm-256color"

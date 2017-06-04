@@ -1,6 +1,6 @@
-[submodule "submodules/zsh-completions"]
-	path = submodules/zsh-completions
+[submodule "d_zsh/submodules/zsh-completions"]
+	path = d_zsh/submodules/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions
-[submodule "submodules/zsh-syntax-highlighting"]
-	path = submodules/zsh-syntax-highlighting
+[submodule "d_zsh/submodules/zsh-syntax-highlighting"]
+	path = d_zsh/submodules/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting

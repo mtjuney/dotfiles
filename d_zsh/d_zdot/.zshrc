@@ -23,7 +23,7 @@ source ~/.dotfiles/d_zsh/prompt.zshrc
 source ~/.dotfiles/d_zsh/alias.zshrc
 
 
-source ~/.dotfiles/d_zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.dotfiles/d_zsh/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 ## load user .zshrc configuration file
