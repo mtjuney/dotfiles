@@ -43,5 +43,8 @@ do
 	link_dotfiles $file
 done
 
+curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 mkdir -p $HOME/.config/nvim
 ln -s $HOME/.dotfiles/_.nvimrc $HOME/.config/nvim/init.vim
