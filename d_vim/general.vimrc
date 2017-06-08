@@ -1,12 +1,5 @@
 " ###基本設定###
 
-set clipboard+=unnamed
-
-"---------------------------------------
-"ゆとり仕様(カーソルキーとかBSキーとか)
-"---------------------------------------
-"viとの互換性を無効にする(INSERT中にカーソルキーが有効になる)
-set nocompatible
 "カーソルを行頭，行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 "BSで削除できるものを指定する
@@ -17,20 +10,36 @@ set backspace=indent,eol,start
 
 
 "###表示設定###
-set number	"行番号を表示
 set title	"編集中のタイトルを表示
-set showmatch	"括弧入力時の対応する括弧を表示
 syntax on	"コード色分け
 filetype plugin on
 filetype indent on
-set tabstop=2	"インデントをスペース4つ分に
-set shiftwidth=2 "オートインデントでずれる幅"
-set smartindent	"オートインデント
-set laststatus=2	"ステータスラインを表示
+
+set completeopt=menuone,longest,preview
+
+" file encoding
+set encoding=utf-8
+set fileencodings=utf-8,iso-2user_jp,euc-jp,ascii
+
+set fileformats=unix,mac,dos
+set number wrap visualbell
+set nocompatible showcmd
+set autoindent smartindent expandtab
+set numberwidth=5 shiftwidth=2 tabstop=2
+set nowritebackup nobackup noswapfile
+set incsearch hlsearch
+set showmatch matchtime=1
+set laststatus=2
+set clipboard+=unnamed mouse=a
+set splitbelow splitright
+set foldmethod=marker foldlevel=99
+set list listchars=trail:-,extends:»,precedes:«,nbsp:%,tab:\ \
+
+
+
 "set statusline=%F%m%r%h%w\ [%{&ff}]\ [%Y]\ [%l,%v]\ [%p%%]\ [LEN=%L]
 "set statusline=%<%F\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 set statusline=%F%m%r%h%w\%=[TYPE=%Y]\[FORMAT=%{&ff}]\[ENC=%{&fileencoding}]\[LOW=%l/%L]
-
 
 " #####検索設定#####
 set ignorecase "大文字/小文字の区別なく検索する
@@ -38,3 +47,5 @@ set smartcase "検索文字列に大文字が含まれている場合は区別�
 set wrapscan "検索時に最後まで行ったら最初に戻る
 
 set cursorline
+
+let g:python3_host_prog = $PYENV_ROOT . '/shims/python'
