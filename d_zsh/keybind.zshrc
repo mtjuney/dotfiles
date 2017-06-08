@@ -23,16 +23,9 @@ bindkey "\e[Z" reverse-menu-complete
 
 
 # peco
-local tac_command
-if which tac > /dev/null; then
-  tac_command="tac"
-else
-  tac_command="tail -r"
-fi
-
 if which peco &> /dev/null; then
 	function peco-history-selection() {
-		BUFFER=$(\history -n 1 | eval $tac_command | awk '!a[$0]++' | peco --query "$LBUFFER")
+		BUFFER=$(\history -n 1 | tac | awk '!a[$0]++' | peco --query "$LBUFFER")
 		CURSOR=$#BUFFER
 		zle reset-prompt
 	}

@@ -46,6 +46,10 @@ alias gicomm="git commit -m"
 alias gipmaster="git push origin master"
 alias gipdevelop="git push origin develop"
 
+if ! which tac &> /dev/null; then
+	alias tac="tail -r"
+fi
+
 function gitbeer() {
 	git add .;
 	git commit -m '🍺';

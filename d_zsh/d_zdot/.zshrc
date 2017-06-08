@@ -14,13 +14,12 @@ esac
 
 source ~/.dotfiles/d_zsh/general.zshrc
 source ~/.dotfiles/d_zsh/expath.zshrc
-source ~/.dotfiles/d_zsh/history.zshrc
-source ~/.dotfiles/d_zsh/keybind.zshrc # after expath
+source ~/.dotfiles/d_zsh/alias.zshrc
+source ~/.dotfiles/d_zsh/keybind.zshrc # after expath alias
 source ~/.dotfiles/d_zsh/shell.zshrc
 source ~/.dotfiles/d_zsh/terminal.zshrc
 source ~/.dotfiles/d_zsh/completion.zshrc
 source ~/.dotfiles/d_zsh/prompt.zshrc
-source ~/.dotfiles/d_zsh/alias.zshrc
 
 
 source ~/.dotfiles/d_zsh/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

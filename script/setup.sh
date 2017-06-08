@@ -7,7 +7,7 @@ git submodule update --init
 ## dotfilesのリンクを張る
 
 # 主なdotfilesのリンク
-DOT_FILES=("atom" "emacs.d" "tmux" "gitignore_global" "tmux.conf" "vimrc" "zshenv" "latexmkrc")
+DOT_FILES=("atom" "emacs.d" "gitignore_global" "tmux.conf" "vimrc" "zshenv" "latexmkrc")
 
 if [ ! -d $HOME/.dotfiles/refuge ]; then
 	mkdir $HOME/.dotfiles/refuge

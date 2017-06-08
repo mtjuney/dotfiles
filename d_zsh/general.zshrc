@@ -32,7 +32,17 @@ setopt chase_links
 setopt mark_dirs
 setopt no_flow_control
 
-fpath=($HOME/.dotfiles/d_zsh/submodules/zsh_completions/src $fpath)
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt share_history
 
+
+# --- history ---
+HISTFILE=${HOME}/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+
+fpath=($HOME/.dotfiles/d_zsh/submodules/zsh_completions/src $fpath)
 
 export TERM="xterm-256color"

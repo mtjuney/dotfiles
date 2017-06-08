@@ -10,8 +10,8 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-[[plugins]]
-repo = 'majutsushi/tagbar'
+# [[plugins]]
+# repo = 'majutsushi/tagbar'
 
 [[plugins]]
 repo = 'godlygeek/tabular'
