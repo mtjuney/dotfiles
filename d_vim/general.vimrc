@@ -33,13 +33,13 @@ set laststatus=2
 set clipboard+=unnamed mouse=a
 set splitbelow splitright
 set foldmethod=marker foldlevel=99
-set list listchars=trail:-,extends:»,precedes:«,nbsp:%,tab:\ \
+" set list listchars=trail:-,extends:»,precedes:«,nbsp:%,tab:\ \
 
 
 
 "set statusline=%F%m%r%h%w\ [%{&ff}]\ [%Y]\ [%l,%v]\ [%p%%]\ [LEN=%L]
 "set statusline=%<%F\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
-set statusline=%F%m%r%h%w\%=[TYPE=%Y]\[FORMAT=%{&ff}]\[ENC=%{&fileencoding}]\[LOW=%l/%L]
+" set statusline=%F%m%r%h%w\%=[TYPE=%Y]\[FORMAT=%{&ff}]\[ENC=%{&fileencoding}]\[LOW=%l/%L]
 
 " #####検索設定#####
 set ignorecase "大文字/小文字の区別なく検索する

@@ -11,15 +11,13 @@
   core:
     disabledPackages: [
       "autocomplete-haskell"
-      "vim-mode"
       "symbols-view"
-      "linter-python"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
   editor:
     fontFamily: "Ricty Diminished Discord"
-    fontSize: 12
+    fontSize: 15
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
@@ -28,14 +26,20 @@
   kite:
     showKiteTourOnStatup: false
   linter: {}
+  "linter-pylama":
+    usePep257: false
+    usePep8: false
   "linter-ui-default":
     showPanel: true
   minimap:
+    disablePythonDocLinks: true
     plugins:
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
       pigments: true
       pigmentsDecorationsZIndex: 0
+  "python-autopep8":
+    formatOnSave: true
   "symbols-tree-view":
     autoToggle: true
   tabs: {}

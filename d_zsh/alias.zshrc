@@ -67,3 +67,4 @@ fi
 
 # others
 alias jn="jupyter notebook"
+alias jl="jupyter lab"
