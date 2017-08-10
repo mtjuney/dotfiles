@@ -1,25 +1,26 @@
 #!/bin/bash
 
+DOTFILES_DIR="$HOME/.dotfiles"
+
 ## submoduleの読み込み
-echo '[[[[ Submodules ]]]]'
+echo '[[[[ SUBMODULES ]]]]'
 git submodule update --init
 
 
 ## dotfilesのリンクを張る
-echo '[[[[ Dotfiles ]]]]'
+echo '[[[[ DOTFILES ]]]]'
 # 主なdotfilesのリンク
 DOT_FILES=("atom" "emacs.d" "gitignore_global" "tmux.conf" "vimrc" "zshenv" "latexmkrc")
 
-if [ ! -d $HOME/.dotfiles/refuge ]; then
-  fimkdir $HOME/.dotfiles/refuge
-  echo "Made directory refuge".
+REFUGE_DIR="${DOTFILES_DIR}/refuge"
+if [ ! -d $REFUGE_DIR ]; then
+  mkdir $REFUGE_DIR && echo "[ MADE ] ${REFUGE_DIR}".
 fi
 
 TODAY=`date '+%F'`
-
-if [ ! -d $HOME/.dotfiles/refuge/$TODAY ]; then
-  mkdir $HOME/.dotfiles/refuge/$TODAY
-  echo "Made directory $TODAY in refuge."
+REFUGE_TODAY_DIR="$REFUGE_DIR/$TODAY"
+if [ ! -d $REFUGE_TODAY_DIR ]; then
+  mkdir $REFUGE_TODAY_DIR && echo "[ MADE ] ${REFUGE_TODAY_DIR}"
 fi
 
 
@@ -31,7 +32,7 @@ link_dotfile(){
     if [ -L $DISTPATH ]; then
       rm $DISTPATH && echo "[ REMOVED ] ${DISTPATH}"
     else
-      mv $DISTPATH $HOME/.dotfiles/refuge/$TODAY/ && echo "[ REFUGED ] ${DISTPATH}"
+      mv $DISTPATH "${REFUGE_TODAY_DIR}/" && echo "[ REFUGED ] ${DISTPATH}"
     fi
   fi
 
@@ -41,11 +42,11 @@ link_dotfile(){
 # DOT_FILESへのリンクを貼る
 for file in ${DOT_FILES[@]}
 do
-  SOURCEPATH="${HOME}/.dotfiles/_.${file}"
+  SOURCEPATH="${DOTFILES_DIR}/_.${file}"
   DISTPATH="${HOME}/.${file}"
   link_dotfile $SOURCEPATH $DISTPATH
 done
 
 
-link_dotfile "$HOME/.dotfiles/_.nvimrc" "$HOME/.config/nvim/init.vim"
+link_dotfile "${DOTFILES_DIR}/_.nvimrc" "${HOME}/.config/nvim/init.vim"
 
