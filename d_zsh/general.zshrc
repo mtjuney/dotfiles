@@ -37,6 +37,7 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt share_history
 
+typeset -U path PATH
 
 # --- history ---
 HISTFILE=${HOME}/.zsh_history

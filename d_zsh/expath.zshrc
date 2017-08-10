@@ -13,5 +13,5 @@ export XDG_CACHE_HOME=$HOME/.cache
 # anyenv
 if [ -d ~/.anyenv ]; then
   export PATH=$HOME/.anyenv/bin:$PATH
-  eval "$(anyenv init -)"
+  eval "$(anyenv init - --no-rehash)"
 fi
