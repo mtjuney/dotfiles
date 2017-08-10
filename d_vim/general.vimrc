@@ -11,7 +11,6 @@ set backspace=indent,eol,start
 
 "###表示設定###
 set title	"編集中のタイトルを表示
-syntax on	"コード色分け
 filetype plugin on
 filetype indent on
 
@@ -30,10 +29,13 @@ set nowritebackup nobackup noswapfile
 set incsearch hlsearch
 set showmatch matchtime=1
 set laststatus=2
+set scrolloff=3
 set clipboard+=unnamed mouse=a
 set splitbelow splitright
 set foldmethod=marker foldlevel=99
-" set list listchars=trail:-,extends:»,precedes:«,nbsp:%,tab:\ \
+" set termguicolors
+set list listchars=trail:•,extends:»,precedes:«,nbsp:•,tab:»-
+" set list
 
 
 

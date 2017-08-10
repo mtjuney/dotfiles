@@ -5,13 +5,32 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/denite.nvim'
 
 [[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if = 'has("nvim")'
+on_i = 1
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'jistr/vim-nerdtree-tabs'
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
 
 [[plugins]]
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-# [[plugins]]
-# repo = 'majutsushi/tagbar'
+[[plugins]]
+repo = 'majutsushi/tagbar'
 
 [[plugins]]
 repo = 'godlygeek/tabular'
@@ -34,6 +53,8 @@ repo = 'vim-airline/vim-airline'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
+[[plugins]]
+repo = 'gosukiwi/vim-atom-dark'
 
 # Languages
 [[plugins]]
@@ -43,3 +64,6 @@ on_ft = 'go'
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'

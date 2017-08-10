@@ -30,6 +30,7 @@
     usePep257: false
     usePep8: false
   "linter-ui-default":
+    panelHeight: 119
     showPanel: true
   minimap:
     disablePythonDocLinks: true
@@ -47,5 +48,7 @@
   term3: {}
   "vim-mode":
     startInInsertMode: true
+  "vim-mode-plus":
+    statusBarModeStringStyle: "long"
   welcome:
     showOnStartup: false
