@@ -31,7 +31,6 @@
     usePep8: false
   "linter-ui-default":
     panelHeight: 119
-    showPanel: true
   minimap:
     disablePythonDocLinks: true
     plugins:
