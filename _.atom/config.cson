@@ -48,6 +48,8 @@
   "vim-mode":
     startInInsertMode: true
   "vim-mode-plus":
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
+    startInInsertMode: true
     statusBarModeStringStyle: "long"
   welcome:
     showOnStartup: false

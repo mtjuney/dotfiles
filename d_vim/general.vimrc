@@ -50,4 +50,4 @@ set wrapscan "検索時に最後まで行ったら最初に戻る
 
 set cursorline
 
-let g:python3_host_prog = $PYENV_ROOT . '/shims/python'
+let g:python3_host_prog = $PYENV_ROOT . '/versions/3.6.0/bin/python'
