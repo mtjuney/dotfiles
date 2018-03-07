@@ -1,0 +1,9 @@
+[user]
+	email = mtjuney@gmail.com
+	name = Junya Yamada
+
+[ghq]
+	root = ~/work/src
+
+[core]
+	excludesfile = ~/.gitignore_global

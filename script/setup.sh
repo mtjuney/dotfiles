@@ -10,7 +10,7 @@ git submodule update --init
 ## dotfilesのリンクを張る
 echo '[[[[ DOTFILES ]]]]'
 # 主なdotfilesのリンク
-DOT_FILES=("atom" "emacs.d" "gitignore_global" "tmux.conf" "vimrc" "zshenv" "latexmkrc")
+DOT_FILES=("atom" "emacs.d" "gitignore_global" "gitconfig" "tmux.conf" "vimrc" "zshenv" "latexmkrc")
 
 REFUGE_DIR="${DOTFILES_DIR}/refuge"
 if [ ! -d $REFUGE_DIR ]; then
