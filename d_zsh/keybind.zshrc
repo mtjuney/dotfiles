@@ -33,7 +33,7 @@ if which peco &> /dev/null; then
 	bindkey '^R' peco-history-selection
 fi
 
-if [which peco &> /dev/null] && [which ghq &> /dev/null]; then
+if [ which peco &> /dev/null ] && [ which ghq &> /dev/null ]; then
 	function peco-ghq-cd () {
 	local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
 	if [ -n "$selected_dir" ]; then
