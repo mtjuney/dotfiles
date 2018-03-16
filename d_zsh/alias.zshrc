@@ -65,6 +65,8 @@ if which nvim &> /dev/null; then
 	alias vim='nvim'
 fi
 
+alias gl="ghq look"
+
 # others
 alias jn="jupyter notebook"
 alias jl="jupyter lab"
