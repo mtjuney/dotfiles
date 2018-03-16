@@ -35,7 +35,7 @@ fi
 
 # ghq and peco
 function peco-ghq-cd () {
-local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+local selected_dir=$(ghq root)/$(ghq list | peco --query "$LBUFFER")
 if [ -n "$selected_dir" ]; then
 	BUFFER="cd ${selected_dir}"
 	zle accept-line
