@@ -67,7 +67,7 @@ fi
 
 # ghq
 alias gl="ghq look"
-alias g="cd $(ghq root)/$(ghq list | peco)"
+alias g='cd $(ghq root)/$(ghq list | peco)'
 
 # others
 alias jn="jupyter notebook"
