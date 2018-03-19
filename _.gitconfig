@@ -3,7 +3,7 @@
 	name = Junya Yamada
 
 [ghq]
-	root = ~/work/src
+	root = ~/repo/src
 
 [core]
 	excludesfile = ~/.gitignore_global
