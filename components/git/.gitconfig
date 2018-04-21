@@ -6,4 +6,4 @@
 	root = ~/repo/src
 
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.dotfiles/components/git/gitignore_global
