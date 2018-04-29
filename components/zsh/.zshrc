@@ -11,7 +11,7 @@ case ${UID} in
     ;;
 esac
 
-ZSH_DIR="~/.dotfiles/components/zsh"
+ZSH_DIR="${HOME}/.dotfiles/components/zsh"
 PARTS_DIR="${ZSH_DIR}/parts"
 
 source ${PARTS_DIR}/general.zshrc
