@@ -1,6 +1,6 @@
 
 " *.vimrcファイル読み込み
-set runtimepath+=~/.dotfiles/d_vim
+set runtimepath+=~/.dotfiles/components/neovim/parts
 
 runtime! general.vimrc
 runtime! dein.vimrc

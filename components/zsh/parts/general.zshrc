@@ -44,6 +44,6 @@ HISTFILE=${HOME}/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
 
-fpath=($HOME/.dotfiles/d_zsh/submodules/zsh_completions/src $fpath)
+fpath=($HOME/.dotfiles/components/zsh/submodules/zsh_completions/src $fpath)
 
 export TERM="xterm-256color"
