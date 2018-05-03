@@ -20,12 +20,12 @@ autoload -Uz vcs_info
 precmd () {
   vcs_info
 
-  local tab_name=''
-  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    tab_name="$(basename `git rev-parse --show-toplevel`)"
-  fi
+  # local tab_name=''
+  # if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
+  #   tab_name="$(basename `git rev-parse --show-toplevel`)"
+  # fi
 
-  echo -ne "\033]0;${tab_name}\007"
+  # echo -ne "\033]0;${tab_name}\007"
 }
 
 zstyle ':vcs_info:git:*' check-for-changes true
