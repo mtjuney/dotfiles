@@ -22,7 +22,6 @@ source ${PARTS_DIR}/shell.zshrc
 source ${PARTS_DIR}/terminal.zshrc
 source ${PARTS_DIR}/completion.zshrc
 source ${PARTS_DIR}/prompt.zshrc
-source ${PARTS_DIR}/iterm.zshrc
 
 
 source ${ZSH_DIR}/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
