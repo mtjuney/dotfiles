@@ -1,12 +1,7 @@
 
-autoload -Uz vcs_info
-precmd () { vcs_info }
-
-zstyle ':vcs_info:*' formats "%r"
-setopt prompt_subst
-
+local tab_name = ''
 if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-  tab_name = $vcs_info_msg_0_
+  tab_name = "$(basename `git rev-parse --show-toplevel`)"
 else
   tab_name = "%~"
 fi
