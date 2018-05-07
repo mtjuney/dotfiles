@@ -7,3 +7,6 @@
 
 [core]
 	excludesfile = ~/.dotfiles/components/git/gitignore_global
+
+[include]
+	path = ~/.local.gitconfig
