@@ -22,6 +22,7 @@ components = [
 
 abs_components = [(path.join(COMPONENT_DIR, src), path.join(HOME_DIR, dst)) for src, dst in components]
 
+
 def link_dotfile(src, dst):
     """
     シンボリックリンクを張る
