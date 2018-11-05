@@ -7,7 +7,7 @@ mtjuney's dotfiles for zsh, vim(nvim), emacs, tmux and atom.
 ```
 $ git clone https://github.com/mtjune/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
-$ bash script/setup.sh
+$ python script/setup.py
 ```
 
 Your original dotfiles (not symbolic link) take refuge to `~/.dotfiles/refuge/` date separately.
