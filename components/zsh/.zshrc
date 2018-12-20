@@ -25,6 +25,7 @@ source ${PARTS_DIR}/prompt.zshrc
 
 
 source ${ZSH_DIR}/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${ZSH_DIR}/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 ## load user .zshrc configuration file
