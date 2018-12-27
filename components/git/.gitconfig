@@ -12,3 +12,5 @@
 	path = ~/.local.gitconfig
 [init]
 	templatedir = ~/.dotfiles/components/git/git_template
+[url "git@github.com:"]
+	insteadOf = https://github.com/
