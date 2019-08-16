@@ -1,19 +1,17 @@
 
-
-CONTEXT_BG=cyan
-CONTEXT_FG=black
-GIT_BG=white
-GIT_FG=black
-STATUS_FG=white
-STATUS_BG=green
-STATUS_ERROR_BG=red
-DIR_FG=white
-DIR_BG=blue
-PROMPT_CHAR='$'
-SEGMENT_SEPARATOR='\ue0b0'
-
+PROMPT_CHAR='❯'
+SEGMENT_SEPARATOR='❯'
 NEWLINE='
 '
+
+# colors
+STATUS_COLOR=green
+STATUS_ERROR_COLOR=red
+CONTEXT_COLOR=cyan
+K8S_COLOR=default
+K8S_SEPARATOR_COLOR=cyan
+DIR_COLOR=blue
+GIT_COLOR=white
 
 # Git Setting
 autoload -Uz vcs_info
@@ -36,20 +34,20 @@ zstyle ':vcs_info:*' formats "%b%c%u%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 setopt prompt_subst
 
-CURRENT_BG='NONE'
+# k8s Setting
+if [ -f /usr/local/opt/kube-ps1/share/kube-ps1.sh ]; then
+  source /usr/local/opt/kube-ps1/share/kube-ps1.sh
+  KUBE_PS1_CTX_COLOR=magenta
+fi
 
 prompt_segment() {
-  local bg fg
-  [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
-  [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
-  if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
-    echo -n " %{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{$fg%} "
-  else
-    echo -n "%{$bg%}%{$fg%} "
-  fi
-  CURRENT_BG=$1
-  [[ -n $3 ]] && echo -n $3
-}
+  local segment_content="$1"
+  local color="$2"
+  local separator_color="$3"
+  [[ -n "$separator_color" ]] || separator_color="${color}"
+  [[ -n "$segment_content" ]] && segment_content=" $segment_content "
+  echo -n "${fg_bold[$color]}$segment_content${fg_bold[$separator_color]}$SEGMENT_SEPARATOR${reset_color}"
+ }
 
 prompt_status() {
   local symbols
@@ -59,9 +57,11 @@ prompt_status() {
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="⚙"
 
   if [[ -n "$symbols" && $RETVAL -ne 0 ]]; then
-    prompt_segment $STATUS_ERROR_BG $STATUS_FG "$symbols"
+    prompt_segment "$symbols" $STATUS_ERROR_COLOR
   elif [[ -n "$symbols" ]]; then
-    prompt_segment $STATUS_BG $STATUS_FG "$symbols"
+    prompt_segment "$symbols" $STATUS_COLOR
+  else
+    prompt_segment "" $STATUS_COLOR
   fi
 
 }
@@ -72,32 +72,28 @@ context() {
 }
 
 prompt_context() {
-
   local _context="$(context)"
-  [[ -n "$_context" ]] && prompt_segment $CONTEXT_BG $CONTEXT_FG "$_context"
+  [[ -n "$_context" ]] && prompt_segment "$_context" $CONTEXT_COLOR
 }
 
 prompt_dir() {
   local dir=''
   dir="${dir}%4(c:...:)%3c"
-  prompt_segment $DIR_BG $DIR_FG $dir
+  prompt_segment $dir $DIR_COLOR
+}
+
+prompt_k8s() {
+  if $(kube_ps1 >/dev/null 2>&1); then
+    local content="$(kube_ps1)"
+    prompt_segment $content $K8S_COLOR $K8S_SEPARATOR_COLOR
+  fi
 }
 
 prompt_git() {
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    prompt_segment $GIT_BG $GIT_FG
-    echo -n "\ue0a0 ${vcs_info_msg_0_}"
+    local content="\ue0a0 ${vcs_info_msg_0_}"
+    prompt_segment $content $GIT_COLOR
   fi
-}
-
-prompt_end() {
-  if [[ -n $CURRENT_BG ]]; then
-    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
-  else
-    echo -n "%{%k%}"
-  fi
-  echo -n "%{%f%}"
-  CURRENT_BG=''
 }
 
 prompt_char() {
@@ -112,14 +108,15 @@ build_prompt() {
   RETVAL=$?
   prompt_status
   prompt_context
+  prompt_k8s
   prompt_dir
   prompt_git
-  prompt_end
 }
 
 PROMPT=''
 PROMPT="$PROMPT$NEWLINE"
-PROMPT="$PROMPT"'%{%f%b%k%}$(build_prompt)'
+PROMPT="$PROMPT$SEGMENT_SEPARATOR$SEGMENT_SEPARATOR"
+PROMPT="$PROMPT"'$(build_prompt)'
 PROMPT="$PROMPT$NEWLINE"
 PROMPT="$PROMPT"'%{${fg_bold[default]}%}'
 PROMPT="$PROMPT"'$(prompt_char) %{$reset_color%}'
