@@ -38,6 +38,8 @@ setopt prompt_subst
 if [ -f /usr/local/opt/kube-ps1/share/kube-ps1.sh ]; then
   source /usr/local/opt/kube-ps1/share/kube-ps1.sh
   KUBE_PS1_CTX_COLOR=magenta
+  KUBE_PS1_PREFIX=''
+  KUBE_PS1_SUFFIX=''
 fi
 
 prompt_segment() {
@@ -100,7 +102,6 @@ prompt_char() {
   local prompt_char
   prompt_char=""
   prompt_char="${PROMPT_CHAR}"
-  prompt_char="%(!.%F{red}#.%F{green}${prompt_char}%f)"
   echo -n $prompt_char
 }
 
