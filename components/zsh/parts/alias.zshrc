@@ -48,16 +48,6 @@ if ! which tac &> /dev/null; then
 	alias tac="tail -r"
 fi
 
-function gitbeer() {
-	git add .;
-	git commit -m '🍺';
-}
-
-function gitfix() {
-	git add .;
-	git commit -m 'bugfix';
-}
-
 # Vim
 if which nvim &> /dev/null; then
 	alias vim='nvim'
