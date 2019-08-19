@@ -43,22 +43,21 @@ alias -g L='| less'
 alias gich="git checkout"
 alias gicom="git commit"
 alias gicomm="git commit -m"
-alias gipmaster="git push origin master"
-alias gipdevelop="git push origin develop"
+
+gichp() {
+  git branch -a --sort=-authordate |
+    grep -v -e '->' -e '*' |
+    perl -pe 's/^\h+//g' |
+    perl -pe 's#^remotes/origin/###' |
+    perl -nle 'print if !$c{$_}++' |
+    peco |
+    xargs git checkout
+}
+
 
 if ! which tac &> /dev/null; then
 	alias tac="tail -r"
 fi
-
-function gitbeer() {
-	git add .;
-	git commit -m '🍺';
-}
-
-function gitfix() {
-	git add .;
-	git commit -m 'bugfix';
-}
 
 # Vim
 if which nvim &> /dev/null; then

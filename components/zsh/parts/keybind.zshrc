@@ -35,12 +35,12 @@ fi
 
 # ghq and peco
 function peco-ghq-cd () {
-local selected_dir=$(ghq root)/$(ghq list | peco --query "$LBUFFER")
-if [ -n "$selected_dir" ]; then
-	BUFFER="cd ${selected_dir}"
-	zle accept-line
-fi
-zle clear-screen
+	local selected_dir=$(ghq root)/$(ghq list | peco --query "$LBUFFER")
+	if [ -n "$selected_dir" ]; then
+		BUFFER="cd ${selected_dir}"
+		zle accept-line
+	fi
+	zle clear-screen
 }
 zle -N peco-ghq-cd
 bindkey '^]' peco-ghq-cd
