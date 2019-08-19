@@ -44,6 +44,17 @@ alias gich="git checkout"
 alias gicom="git commit"
 alias gicomm="git commit -m"
 
+gichp() {
+  git branch -a --sort=-authordate |
+    grep -v -e '->' -e '*' |
+    perl -pe 's/^\h+//g' |
+    perl -pe 's#^remotes/origin/###' |
+    perl -nle 'print if !$c{$_}++' |
+    peco |
+    xargs git checkout
+}
+
+
 if ! which tac &> /dev/null; then
 	alias tac="tail -r"
 fi
