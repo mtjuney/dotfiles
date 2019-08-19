@@ -43,8 +43,6 @@ alias -g L='| less'
 alias gich="git checkout"
 alias gicom="git commit"
 alias gicomm="git commit -m"
-alias gipmaster="git push origin master"
-alias gipdevelop="git push origin develop"
 
 if ! which tac &> /dev/null; then
 	alias tac="tail -r"
