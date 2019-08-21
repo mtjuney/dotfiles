@@ -40,6 +40,7 @@ if [ -f /usr/local/opt/kube-ps1/share/kube-ps1.sh ]; then
   KUBE_PS1_CTX_COLOR=magenta
   KUBE_PS1_PREFIX=''
   KUBE_PS1_SUFFIX=''
+  KUBE_PS1_SEPARATOR=''
 fi
 
 prompt_segment() {
@@ -70,7 +71,7 @@ prompt_status() {
 
 context() {
   local user="$(whoami)"
-	[[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]] && echo -n "${user}@%m"
+  [[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]] && echo -n "${user}@%m"
 }
 
 prompt_context() {
@@ -121,3 +122,4 @@ PROMPT="$PROMPT"'$(build_prompt)'
 PROMPT="$PROMPT$NEWLINE"
 PROMPT="$PROMPT"'%{${fg_bold[default]}%}'
 PROMPT="$PROMPT"'$(prompt_char) %{$reset_color%}'
+
