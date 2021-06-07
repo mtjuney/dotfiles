@@ -12,8 +12,8 @@
 	path = ~/.local.gitconfig
 [init]
 	templatedir = ~/.dotfiles/components/git/git_template
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+# [url "git@github.com:"]
+# 	insteadOf = https://github.com/
 [secrets]
 	providers = git secrets --aws-provider
 	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
